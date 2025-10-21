@@ -1,25 +1,28 @@
-# 🎉 Birthday Surprise Flutter App
+# 🎉 Birthday Bash — A Flutter Birthday Surprise App
 
-A pastel-themed, interactive Flutter app designed to surprise someone special on their birthday — featuring smooth navigation, cheerful icons, and **hourly birthday notifications** that remind them how loved they are! 💖
+A pastel-themed, interactive Flutter app designed to surprise someone special on their birthday — featuring beautiful animations, heartfelt messages, cheerful icons, and **hourly birthday notifications** that make their day feel truly magical! 💖  
 
 ---
 
 ## ✨ Features
 
-- 🎂 **Animated Splash Screen** — Welcomes the user with a birthday message.  
-- 💭 **Fun Dialog Screen** — Asks, “Did you think I forgot?” before revealing the surprise.  
-- 🎁 **Birthday Message Page** — Displays heartfelt wishes in a pastel UI.  
-- 🔔 **Hourly Birthday Notifications** — Sends gentle reminders every hour to wish a happy birthday!  
-- 🌈 **Pastel UI Design** — Soft, unified colors and rounded buttons for a smooth and joyful user experience.  
-- 📱 **Lightweight & Fast** — Built with Flutter’s modern widget system for seamless performance.  
+- 🎂 **Animated Splash Screen** — Greets the user with a fun birthday animation or GIF.  
+- 💭 **Playful Dialog Screen** — Asks “Did you think I forgot?” — a fun twist before revealing the surprise.  
+- 🎁 **Birthday Wishes Screen** — Displays loving messages, music, and icons in soft pastel tones.  
+- 🔔 **Hourly Notifications** — Sends warm birthday wishes every hour throughout the day.  
+- 🎵 **Built-in Music Player** — Plays cheerful birthday tunes like `birthday.m4a` and `Enchanted.m4a`.  
+- 🌈 **Pastel UI Theme** — Consistent, elegant color palette and rounded buttons.  
+- 💌 **Offline & Lightweight** — Works smoothly without heavy dependencies.  
 
 ---
 
 ## 🧠 Tech Stack
 
 - **Framework:** Flutter (Dart)  
-- **State Management:** setState (no external dependencies)  
-- **Notification Service:** flutter_local_notifications (or similar)  
+- **Notifications:** flutter_local_notifications  
+- **Audio Playback:** audioplayers  
+- **Permissions:** permission_handler  
+- **Fonts:** Google Fonts + Custom font (*Caveat*)  
 - **Design:** Pastel-themed Material UI  
 
 ---
@@ -28,25 +31,8 @@ A pastel-themed, interactive Flutter app designed to surprise someone special on
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/birthday-surprise-app.git
-cd birthday-surprise-app
-```
-
----
-
-## 🧩 Folder Structure
-
-```
-birthday_surprise_app/
-│
-├── lib/
-│   ├── main.dart              # Main application entry
-│
-├── android/                   # Android build files
-├── ios/                       # iOS build files
-├── assets/                    # Placeholder for any images or icons
-├── pubspec.yaml               # Dependencies and metadata
-└── README.md
+git clone https://github.com/<your-username>/birthdaybash.git
+cd birthdaybash
 ```
 
 ---
@@ -56,14 +42,41 @@ birthday_surprise_app/
 flutter pub get
 ```
 
+---
+
 ### 3. Run the App
 ```bash
 flutter run
 ```
 
-### 4. Build APK (optional)
+---
+
+### 4. Build the APK (optional)
 ```bash
 flutter build apk --release
+```
+
+---
+
+## 🧩 Folder Structure
+
+```
+birthdaybash/
+│
+├── lib/
+│   ├── main.dart              # Main app logic and screens
+│
+├── assets/
+│   ├── audio/
+│   │   ├── birthday.m4a
+│   │   └── Enchanted.m4a
+│   ├── images/
+│   │   └── heart.gif
+│   └── fonts/
+│       └── Caveat.ttf
+│
+├── pubspec.yaml               # Dependencies and asset config
+└── README.md
 ```
 
 ---
@@ -72,15 +85,22 @@ flutter build apk --release
 
 To enable hourly birthday reminders:
 
-1. Add the dependency in `pubspec.yaml`:
+1. Add this dependency (already included in your `pubspec.yaml`):
    ```yaml
-   dependencies:
-     flutter_local_notifications: ^17.0.0
+   flutter_local_notifications: ^17.1.2
    ```
-2. Initialize the notification service in your `main.dart` file.  
-3. Schedule notifications every hour using `periodicallyShow()`.  
-
-> 💡 **Note:** Test on a physical device for accurate notification scheduling.
+2. Initialize notifications in `main.dart` (in `initState` or a dedicated service).  
+3. Schedule periodic notifications using:
+   ```dart
+   periodicallyShow(
+     0,
+     '🎉 Happy Birthday!',
+     'Wishing you joy and love every hour 💕',
+     RepeatInterval.hourly,
+     notificationDetails,
+   );
+   ```
+> 💡 **Note:** Works best on real devices, not emulators.
 
 ---
 
@@ -98,9 +118,18 @@ To enable hourly birthday reminders:
 
 ## 💡 Future Enhancements
 
-- 🎵 Background birthday tune on home screen  
-- 🎈 Confetti animation upon splash entry  
-- 🧁 Personalized message editor for each friend  
+- 🎈 Confetti animation on splash entry  
+- 🧁 Add personalized message editor  
+- 💫 Integrate cloud sync for storing greetings  
+- 🎶 Option to upload custom songs  
+
+---
+
+## 🧑‍💻 Author
+
+**Developed by:** [Manahil Sabir](https://github.com/minni-developer)  
+**Email:** manahilsabir544@gmail.com  
+**LinkedIn:** [Manahil Sabir](https://www.linkedin.com/in/manahil-sabir)
 
 ---
 
