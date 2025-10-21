@@ -24,6 +24,13 @@ A pastel-themed, interactive Flutter app designed to surprise someone special on
 
 ---
 
+## ⚙️ Installation Guide
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/<your-username>/birthday-surprise-app.git
+cd birthday-surprise-app
+## 🧩 Folder Structure
 
 birthday_surprise_app/
 │
@@ -37,33 +44,23 @@ birthday_surprise_app/
 └── README.md
 
 
----
 
-## ⚙️ Installation Guide
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/<your-username>/birthday-surprise-app.git
-cd birthday-surprise-app
-## 🧩 Folder Structure
-
-
-2. Install Dependencies
+###2. Install Dependencies
 flutter pub get
 
-3. Run the App
+###3. Run the App
 flutter run
 
-4. Build APK (optional)
+###4. Build APK (optional)
 flutter build apk --release
 
-🕓 Setting Up Hourly Notifications
+##🕓 Setting Up Hourly Notifications
 
 To enable hourly birthday reminders:
 
 Add the dependency in pubspec.yaml:
 
-dependencies:
+###dependencies:
   flutter_local_notifications: ^17.0.0
 
 
@@ -73,21 +70,18 @@ Schedule notifications every hour using periodicallyShow().
 
 (Ensure to test on a physical device for accurate notification scheduling.)
 
-🎨 UI Theme Palette
+##🎨 UI Theme Palette
 Element	Color Name	Hex Code
 Primary Pink	Pastel Pink	#F8BBD0
 Accent Purple	Lavender	#E1BEE7
 Soft Blue	Baby Blue	#BBDEFB
 Mint Green	Pastel Mint	#C8E6C9
 Blush Outline	Blush Pink	#F48FB1
-💡 Future Enhancements
 
+##💡 Future Enhancements
 🎵 Background birthday tune on home screen
-
 🎈 Confetti animation upon splash entry
-
 🧁 Personalized message editor for each friend
-
 
 
 🌟 “A little surprise, every hour — because some birthdays deserve to last all day!”
